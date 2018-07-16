@@ -114,8 +114,8 @@ public class EditorActivity extends AppCompatActivity {
         String priceString = mPriceEditText.getText().toString().trim();
         int price = Integer.parseInt(priceString);
         String supplierString = mSupplierEditText.getText().toString().trim();
-        String supplierPhoneString = mSupplierPhoneEditText.getText().toString().trim();
-        int supplierPhone = Integer.parseInt(supplierPhoneString);
+        String supplierPhoneNumberString = mSupplierPhoneEditText.getText().toString().trim();
+        int supplierPhone = Integer.parseInt(supplierPhoneNumberString);
 
         // Create database helper
         BookDbHelper mDbHelper = new BookDbHelper(this);
@@ -130,7 +130,7 @@ public class EditorActivity extends AppCompatActivity {
         values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, mQuantity);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER, supplierString);
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, supplierPhoneString);
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, supplierPhoneNumberString);
 
         // Insert a new row for book in the database, returning the ID of that new row.
         long newRowId = db.insert(BookEntry.TABLE_NAME, null, values);

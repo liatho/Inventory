@@ -65,7 +65,7 @@ public class CatalogActivity extends AppCompatActivity {
                 BookEntry.COLUMN_BOOK_PRICE,
                 BookEntry.COLUMN_BOOK_QUANTITY,
                 BookEntry.COLUMN_BOOK_SUPPLIER,
-                BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER };
+                BookEntry.COLUMN_BOOK_SUPPLIER_PHONE };
 
         // Perform a query on the books table
         Cursor cursor = db.query(
@@ -92,15 +92,15 @@ public class CatalogActivity extends AppCompatActivity {
                     BookEntry.COLUMN_BOOK_NAME + " - " +
                     BookEntry.COLUMN_BOOK_PRICE + " - " +
                     BookEntry.COLUMN_BOOK_QUANTITY + " - " +
-                    BookEntry.COLUMN_BOOK_SUPPLIER + "-"+
-                    BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER + "\n");
+                    BookEntry.COLUMN_BOOK_SUPPLIER + " - " +
+                    BookEntry.COLUMN_BOOK_SUPPLIER_PHONE + "\n");
             // Figure out the index of each column
             int idColumnIndex = cursor.getColumnIndex(BookEntry._ID);
             int nameColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_NAME);
             int priceColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_PRICE);
             int quantityColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_QUANTITY);
             int supplierColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_SUPPLIER);
-            int supplierPhoneColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER);
+            int supplierPhoneColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE);
 
             // Iterate through all the returned rows in the cursor
             while (cursor.moveToNext()) {
@@ -141,7 +141,7 @@ public class CatalogActivity extends AppCompatActivity {
         values.put(BookEntry.COLUMN_BOOK_PRICE, "32$");
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, BookEntry.QUANTITY_IN_STOCK);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER, "Amazon");
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, "5865444");
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE, "5865444");
 
         // Insert a new row for Poems in the database, returning the ID of that new row.
         // The first argument for db.insert() is the books table name.

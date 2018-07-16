@@ -34,7 +34,7 @@ public final class BookContract {
          *
          * Type: TEXT
          */
-        public final static String COLUMN_BOOK_NAME ="name";
+        public final static String COLUMN_BOOK_NAME = "name";
 
         /**
          * Price of the book.
@@ -58,9 +58,9 @@ public final class BookContract {
          *
          * Type: INTEGER
          */
-        public final static String COLUMN_BOOK_SUPPLIER = "supplier name";
+        public final static String COLUMN_BOOK_SUPPLIER = "supplier";
 
-        public final static String COLUMN_BOOK_SUPPLIER_PHONE_NUMBER = "supplier phone number";
+        public final static String COLUMN_BOOK_SUPPLIER_PHONE = "supplier_phone";
 
         /**
          * Possible values for the quantity of the book.
